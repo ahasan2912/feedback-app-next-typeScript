@@ -2,13 +2,9 @@
 import { useState } from 'react'
 import { Mail, MessageSquareMore, Send, User } from 'lucide-react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Feedback, FeedbackFormInputs } from '@/type/type'
+import { Feedback, FeedbackFormInputs, FeedbackFormProps } from '@/type/type'
 import Swal from 'sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
-
-interface FeedbackFormProps {
-    onAddFeedback: (savedFeedback: Feedback) => void;
-}
 
 export default function FeedbackForm({ onAddFeedback }: FeedbackFormProps) {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FeedbackFormInputs>()
